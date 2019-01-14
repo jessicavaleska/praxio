@@ -1,0 +1,13 @@
+section {
+  &.login {
+    .container-size-1 {
+      form {
+        .reset-password-link {
+          font-size: 12px;
+          color: #585859;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
