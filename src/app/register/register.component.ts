@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Formulario } from '../formulario';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class RegisterComponent implements OnInit {
 
+  public model;
+
   constructor() { }
 
-  ngOnInit() {
+  onSubmit(){
+
   }
+
+  ngOnInit() {
+    this.model = new Formulario(0, '', 0, 0, '', '', 0, '', 0, '');
+  }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.model); }
 
 }

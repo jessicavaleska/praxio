@@ -1,10 +1,17 @@
+@import './../../assets/scss/_variables';
+@import './../../assets/scss/_mixins';
+
 section {
   &.login {
+    width: 100%;
+    height: 100%;
+    @include display-flex(wrap, center, center);
+
     .container-size-1 {
       form {
         .reset-password-link {
           font-size: 12px;
-          color: #585859;
+          color: $dark-gray !important;
           text-align: right;
         }
       }
