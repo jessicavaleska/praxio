@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Mukta');
+@import url('https://fonts.googleapis.com/css?family=Mukta|Open+Sans');
 
 @import './assets/scss/_variables';
 @import './assets/scss/_mixins';
@@ -19,6 +19,13 @@ a {
   }
 }
 
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: $dark-gray;
+  @include fontsize(29);
+}
+
 input {
   width: 100%;
   height: 40px;
@@ -26,6 +33,7 @@ input {
   border: 1px solid $gray;
   border-radius: 5px;
   color: $light-gray;
+  @include fontsize(14);
 
   &:focus {
     outline: none;
@@ -33,16 +41,34 @@ input {
 
   &::-webkit-input-placeholder {
     color: $light-gray;
+    @include fontsize(14);
   }
   &::-moz-placeholder {
     color: $light-gray;
+    @include fontsize(14);
   }
   &:-ms-input-placeholder {
     color: $light-gray;
+    @include fontsize(14);
   }
   &:-moz-placeholder {
     color: $light-gray;
+    @include fontsize(14);
   }
+}
+
+.alert {
+  @include fontsize(12);
+  padding: 0;
+  border: none;
+  margin: 0;
+  text-align: left;
+}
+
+.alert-danger {
+  color: $red;
+  background-color: transparent;
+  //border-color: #f5c6cb;
 }
 
 .container-size-1 {
@@ -61,12 +87,12 @@ input {
 }
 
 .btn {
-  //width: 360px;
-  //height: 60px;
-  background-color: $purple;
+  width: 360px;
+  height: 60px;
+  background-color: $purple !important;
   border: none;
   border-radius: 30px;
-  font-size: 18px;
+  @include fontsize(18);
   font-weight: bold;
   color: $white;
   transition: .5s;
@@ -74,5 +100,39 @@ input {
   &:hover {
     background-color: $light-purple;
     transition: .5s;
+  }
+}
+
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+@media (max-width: 770px) {
+  .container-size-2 {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    position: absolute;
+  }
+}
+
+@media (max-width: 500px) {
+  .container-size-1, .container-size-3 {
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .btn {
+    width: 100%;
+    height: 50px;
+    @include fontsize(16);
+  }
+
+  h1 {
+    @include fontsize(22);
   }
 }

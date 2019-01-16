@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Formulario } from '../formulario';
+import { Formulario } from '../_class/formulario';
 
 @Component({
   selector: 'app-login',

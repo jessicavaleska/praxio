@@ -1,0 +1,54 @@
+@import './../../assets/scss/_variables';
+@import './../../assets/scss/_mixins';
+
+section {
+  &.not-found {
+    width: 100%;
+    height: 100vh;
+    background: url('src/assets/image/bg-front.svg') center center no-repeat;
+    background-size: contain;
+    @include display-flex(wrap, center, center);
+
+    h1, h2 {
+      width: 100%;
+      color: $white;
+      text-align: center;
+    }
+
+    h1 {
+      @include fontsize(40);
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      @include fontsize(20);
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  section {
+    &.not-found {
+      width: 100%;
+      height: 100vh;
+      background: url('src/assets/image/bg-front.svg') center center no-repeat;
+      background-size: contain;
+      @include display-flex(wrap, center, center);
+
+      h1, h2 {
+        width: 100%;
+        color: $white;
+        text-align: center;
+      }
+
+      h1 {
+        @include fontsize(20);
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        @include fontsize(14);
+      }
+    }
+  }
+}

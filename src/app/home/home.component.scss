@@ -1,0 +1,41 @@
+@import './../../assets/scss/_variables';
+@import './../../assets/scss/_mixins';
+
+section {
+  &.home {
+    width: 100%;
+    height: 100vh;
+    @include display-flex(wrap, center, center);
+    background-image: url('src/assets/image/bg-front.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom center;
+    //background-position: 50% -200%;
+
+    .container-size-3 {
+      @include display-flex;
+    }
+  }
+}
+
+.btn-logout {
+  width: 124px;
+  height: 36px;
+  background-color: transparent;
+  border: 2px solid $gray-2;
+  border-radius: 30px;
+  @include fontsize(16);
+  font-weight: bold;
+  color: $dark-gray;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: .5s;
+
+  &:hover {
+    background-color: $gray-2;
+    //box-shadow: 0 10px 35px $light-gray;
+    transition: .5s;
+  }
+}
