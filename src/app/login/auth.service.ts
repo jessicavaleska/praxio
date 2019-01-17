@@ -20,13 +20,13 @@ export class AuthService {
             () => console.log('WebService Conectado') /* Server Ok */);
 
         // Descomentar para teste
-        if (usuario.email === 'teste@teste.com' && usuario.senha === '123456') {
+        /*if (usuario.email === 'teste@teste.com' && usuario.senha === '123456') {
             this.usuarioAuth = true;
 
             this.router.navigate(['/home']);
         } else {
             this.usuarioAuth = false;
-        }
+        }*/
     }
 
     usuarioRedirect = (data = new Object) => {
