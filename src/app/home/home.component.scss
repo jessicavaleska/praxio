@@ -6,11 +6,8 @@ section {
     width: 100%;
     height: 100vh;
     @include display-flex(wrap, center, center);
-    background-image: url('src/assets/image/bg-front.svg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom center;
-    //background-position: 50% -200%;
+    background: url('src/assets/image/bg-front.svg') center center no-repeat;
+    background-size: 90%;
 
     .container-size-3 {
       @include display-flex;

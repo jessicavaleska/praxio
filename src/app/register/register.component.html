@@ -1,107 +1,113 @@
 <section class="register">
-    <div class="container-size-2">
-        <h1>Cadastrar</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Cadastrar</h1>
 
-        <form>
-            <div class="content-left">
-                <h2>Informações Pessoais</h2>
+                <form (ngSubmit)="onSubmit($event, registroForm)" #registroForm="ngForm">
+                    <div class="col col-lg-6">
+                        <h2>Informações Pessoais</h2>
 
-                <div class="form-group">
-                    <input type="text" id="nome" placeholder="Nome/Razão Social" minlength="1" maxlength="100" required name="nome" [(ngModel)]="nome" #propNome="ngModel"/>
+                        <div class="form-group">
+                            <input type="text" id="nome" placeholder="Nome/Razão Social" minlength="1" maxlength="100" required name="nome" [(ngModel)]="nomeRazaoSocial" #propNome="ngModel"/>
 
-                    <div *ngIf="propNome.invalid && (propNome.dirty || propNome.touched)" class="alert alert-danger">
-                        <div *ngIf="propNome.errors.required">*O campo Nome é requerido.</div>
-                        <div *ngIf="propNome.errors.minlength">Nome deve ter no mínimo 1 caracter.</div>
-                    </div>
-                </div>
+                            <div *ngIf="propNome.invalid && (propNome.dirty || propNome.touched)" class="alert alert-danger">
+                                <div *ngIf="propNome.errors.required">*O campo Nome/Razão Social é requerido.</div>
+                                <div *ngIf="propNome.errors.minlength">Nome/Razão Social deve ter no mínimo 1 caracter.</div>
+                            </div>
+                        </div>
 
-                <div class="wrap">
-                    <div class="form-group half">
-                        <input type="text" id="cpf" placeholder="CPF" mask="000.000.000-00" minlength="11" maxlength="100" required name="cpf" [(ngModel)]="cpf" #propCpf="ngModel"/>
+                        <div class="wrap">
+                            <div class="form-group half">
+                                <input type="text" id="cpfCnpj" placeholder="CPF/CNPJ" mask="000.000.000-00" minlength="11" maxlength="100" required name="cpfCnpj" [(ngModel)]="cpfCnpj" #propCpfCnpj="ngModel"/>
 
-                        <div *ngIf="propCpf.invalid && (propCpf.dirty || propCpf.touched)" class="alert alert-danger">
-                            <div *ngIf="propCpf.errors.required">*O campo CPF é requerido.</div>
-                            <div *ngIf="propCpf.errors.minlength">CPF deve ter 11 caracteres.</div>
+                                <div *ngIf="propCpfCnpj.invalid && (propCpfCnpj.dirty || propCpfCnpj.touched)" class="alert alert-danger">
+                                    <div *ngIf="propCpfCnpj.errors.required">*O campo CPF/CNPJ é requerido.</div>
+                                    <div *ngIf="propCpfCnpj.errors.minlength">CPF/CNPJ deve ter 11 caracteres.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group half">
+                                <input type="text" id="telefone" placeholder="Telefone" mask="(00) 00000-0000" minlength="10" maxlength="100" required name="telefone" [(ngModel)]="telefone" #propTelefone="ngModel"/>
+
+                                <div *ngIf="propTelefone.invalid && (propTelefone.dirty || propTelefone.touched)" class="alert alert-danger">
+                                    <div *ngIf="propTelefone.errors.required">*O campo Telefone é requerido.</div>
+                                    <div *ngIf="propTelefone.errors.minlength">Telefone deve ter no mínimo 10 caracteres.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" aria-describedby="emailHelp" placeholder="E-mail" minlength="1" maxlength="100" required email name="email" [(ngModel)]="email" #propEmail="ngModel"/>
+
+                            <div *ngIf="propEmail.invalid && (propEmail.dirty || propEmail.touched)" class="alert alert-danger">
+                                <div *ngIf="propEmail.errors.required">*O campo E-mail é requerido.</div>
+                                <div *ngIf="propEmail.errors.email">Digite um e-mail válido</div>
+                                <div *ngIf="propEmail.errors.minlength">E-mail deve ter no mínimo 1 caracter.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" id="senha" placeholder="Senha" minlength="6" maxlength="100" required name="senha" [(ngModel)]="senha" #propSenha="ngModel"/>
+
+                            <div *ngIf="propSenha.invalid && (propSenha.dirty || propSenha.touched)" class="alert alert-danger">
+                                <div *ngIf="propSenha.errors.required">*O campo Senha é requerido.</div>
+                                <div *ngIf="propSenha.errors.minlength">Senha deve ter no mínimo 6 caracteres.</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-group half">
-                        <input type="text" id="telefone" placeholder="Telefone" mask="(00) 00000-0000" minlength="10" maxlength="100" required name="telefone" [(ngModel)]="telefone" #propTelefone="ngModel"/>
+                    <div class="col col-lg-6">
+                        <h2>Endereço</h2>
 
-                        <div *ngIf="propTelefone.invalid && (propTelefone.dirty || propTelefone.touched)" class="alert alert-danger">
-                            <div *ngIf="propTelefone.errors.required">*O campo Telefone é requerido.</div>
-                            <div *ngIf="propTelefone.errors.minlength">Telefone deve ter no mínimo 10 caracteres.</div>
+                        <div class="wrap">
+                            <div class="form-group small">
+                                <input type="text" id="cep" placeholder="CEP" mask="00000-000" minlength="8" maxlength="100" required name="cep" [(ngModel)]="cep" #propCep="ngModel"/>
+
+                                <div *ngIf="propCep.invalid && (propCep.dirty || propCep.touched)" class="alert alert-danger">
+                                    <div *ngIf="propCep.errors.required">*O campo CEP é requerido.</div>
+                                    <div *ngIf="propCep.errors.minlength">CEP deve ter 8 caracteres.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group medium">
+                                <input type="text" id="logradouro" minlength="1" maxlength="100" required name="logradouro" placeholder="Logradouro" [(ngModel)]="logradouro" #propLogradouro="ngModel"/>
+
+                                <div *ngIf="propLogradouro.invalid && (propLogradouro.dirty || propLogradouro.touched)" class="alert alert-danger">
+                                    <div *ngIf="propLogradouro.errors.required">*Logradouro é requerido.</div>
+                                    <div *ngIf="propLogradouro.errors.minlength">Logradouro deve ter no mínimo 1 caracter.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wrap">
+                            <div class="form-group small">
+                                <input type="text" id="numero" placeholder="Número" minlength="1" maxlength="100" required name="numero" [(ngModel)]="numero" #propNumero="ngModel"/>
+
+                                <div *ngIf="propNumero.invalid && (propNumero.dirty || propNumero.touched)" class="alert alert-danger">
+                                    <div *ngIf="propNumero.errors.required">*O campo Número é requerido.</div>
+                                    <div *ngIf="propNumero.errors.minlength">Número deve ter no mínimo 1 caracter.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group medium">
+                                <input type="text" id="bairro" placeholder="Bairro" minlength="1" maxlength="100" required name="bairro" [(ngModel)]="bairro" #propBairro="ngModel"/>
+
+                                <div *ngIf="propBairro.invalid && (propBairro.dirty || propBairro.touched)" class="alert alert-danger">
+                                    <div *ngIf="propBairro.errors.required">*O campo Bairro é requerido.</div>
+                                    <div *ngIf="propBairro.errors.minlength">Bairro deve ter no mínimo 1 caracter.</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <input type="email" id="email" aria-describedby="emailHelp" placeholder="E-mail" minlength="1" maxlength="100" required email name="email" [(ngModel)]="email" #propEmail="ngModel"/>
+                    <div class="col col-lg-12">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
 
-                    <div *ngIf="propEmail.invalid && (propEmail.dirty || propEmail.touched)" class="alert alert-danger">
-                        <div *ngIf="propEmail.errors.required">*O campo E-mail é requerido.</div>
-                        <div *ngIf="propEmail.errors.email">Digite um e-mail válido</div>
-                        <div *ngIf="propEmail.errors.minlength">E-mail deve ter no mínimo 1 caracter.</div>
+                        <a routerLink="/login">Já tem uma conta? Faça login</a>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <input type="password" id="senha" placeholder="Senha" minlength="6" maxlength="100" required name="senha" [(ngModel)]="senha" #propSenha="ngModel"/>
-
-                    <div *ngIf="propSenha.invalid && (propSenha.dirty || propSenha.touched)" class="alert alert-danger">
-                        <div *ngIf="propSenha.errors.required">*O campo Senha é requerido.</div>
-                        <div *ngIf="propSenha.errors.minlength">Senha deve ter no mínimo 6 caracteres.</div>
-                    </div>
-                </div>
+                </form>
             </div>
-
-            <div class="content-right">
-                <h2>Endereço</h2>
-
-                <div class="wrap">
-                    <div class="form-group small">
-                        <input type="text" id="cep" placeholder="CEP" mask="00000-000" minlength="8" maxlength="100" required name="cep" [(ngModel)]="cep" #propCep="ngModel"/>
-
-                        <div *ngIf="propCep.invalid && (propCep.dirty || propCep.touched)" class="alert alert-danger">
-                            <div *ngIf="propCep.errors.required">*O campo CEP é requerido.</div>
-                            <div *ngIf="propCep.errors.minlength">CEP deve ter 8 caracteres.</div>
-                        </div>
-                    </div>
-
-                    <div class="form-group medium">
-                        <input type="text" id="logradouro" minlength="1" maxlength="100" required name="logradouro" placeholder="Logradouro" [(ngModel)]="logradouro" #propLogradouro="ngModel"/>
-
-                        <div *ngIf="propLogradouro.invalid && (propLogradouro.dirty || propLogradouro.touched)" class="alert alert-danger">
-                            <div *ngIf="propLogradouro.errors.required">*Logradouro é requerido.</div>
-                            <div *ngIf="propLogradouro.errors.minlength">Logradouro deve ter no mínimo 1 caracter.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="wrap">
-                    <div class="form-group small">
-                        <input type="text" id="numero" placeholder="Número" minlength="1" maxlength="100" required name="numero" [(ngModel)]="numero" #propNumero="ngModel"/>
-
-                        <div *ngIf="propNumero.invalid && (propNumero.dirty || propNumero.touched)" class="alert alert-danger">
-                            <div *ngIf="propNumero.errors.required">*O campo Número é requerido.</div>
-                            <div *ngIf="propNumero.errors.minlength">Número deve ter no mínimo 1 caracter.</div>
-                        </div>
-                    </div>
-
-                    <div class="form-group medium">
-                        <input type="text" id="bairro" placeholder="Bairro" minlength="1" maxlength="100" required name="bairro" [(ngModel)]="bairro" #propBairro="ngModel"/>
-
-                        <div *ngIf="propBairro.invalid && (propBairro.dirty || propBairro.touched)" class="alert alert-danger">
-                            <div *ngIf="propBairro.errors.required">*O campo Bairro é requerido.</div>
-                            <div *ngIf="propBairro.errors.minlength">Bairro deve ter no mínimo 1 caracter.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-
-            <a routerLink="/login">Já tem uma conta? Faça login</a>
-        </form>
+        </div>
     </div>
 </section>

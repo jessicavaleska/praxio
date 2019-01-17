@@ -1,22 +1,51 @@
 <section class="home">
-  <div class="container-size-3">
-    <img src="assets/image/front-test.svg" alt="" />
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6">
+              <img src="assets/image/front-test.svg" alt="" />
 
-    <h2>Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá.</h2>
+              <h2>Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá.</h2>
 
-    <button>Saiba mais</button>
-
-    <ul>
-      <li>Quem Somos</li>
-      <li>Como Funciona</li>
-      <li>FAQ's</li>
-      <li>Contato</li>
-      <li>Login</li>
-      <li>Cadastro</li>
-      <li>Termos de Uso</li>
-      <li>Privacidade</li>
-    </ul>
+              <button class="btn btn-saiba-mais">Saiba mais</button>
+          </div>
+      </div>
+    <div class="carousel" data-ride="carousel">
+        <div class="carousel-item">
+            <img src="..." alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá.</h5>
+                <button class="btn btn-saiba-mais">Saiba mais</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="..." alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá.</h5>
+                <button class="btn btn-saiba-mais">Saiba mais</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="..." alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz malandris se pirulitá.</h5>
+                <button class="btn btn-saiba-mais">Saiba mais</button>
+            </div>
+        </div>
+    </div>
   </div>
 </section>
+
+<footer>
+    <ul>
+        <li>Quem Somos</li>
+        <li>Como Funciona</li>
+        <li>FAQ's</li>
+        <li>Contato</li>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/register">Cadastro</a></li>
+        <li>Termos de Uso</li>
+        <li>Privacidade</li>
+    </ul>
+</footer>
 
 <button class="btn-logout" routerLink="/login">Logout</button>

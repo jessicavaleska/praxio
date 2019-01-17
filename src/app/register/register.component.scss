@@ -5,14 +5,63 @@ section {
   &.register {
     width: 100%;
     height: 100vh;
+    background: url('src/assets/image/bg-front-bottom.svg') center bottom no-repeat;
     @include display-flex(wrap, center, center);
-    background-image: url('src/assets/image/bg-front.svg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: bottom center;
-    //background-position: 50% -200%;
 
-    .container-size-2 {
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    form {
+      text-align: center;
+      @include display-flex(wrap, flex-start, space-between);
+
+      .wrap {
+        @include display-flex(wrap, center, space-between);
+
+        .half {
+          width: calc(50% - 5px);
+        }
+
+        .small {
+          width: calc(30% - 5px);
+        }
+
+        .medium {
+          width: calc(70% - 5px);
+        }
+      }
+
+      .form-group {
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        width: 100%;
+        @include fontsize(16);
+        font-weight: bold;
+        color: $dark-gray;
+        text-align: left;
+      }
+
+      button {
+        margin: 25px auto;
+        box-shadow: 0 10px 35px $light-gray;
+      }
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  section {
+    &.register {
+      height: auto;
+      padding: 100px 0 ;
+
       h1 {
         margin-bottom: 30px;
       }
@@ -24,16 +73,8 @@ section {
         .wrap {
           @include display-flex(wrap, center, space-between);
 
-          .half {
-            width: calc(50% - 5px);
-          }
-
-          .small {
-            width: calc(30% - 5px);
-          }
-
-          .medium {
-            width: calc(70% - 5px);
+          .half, .small, .medium {
+            width: 100%;
           }
         }
 
@@ -58,58 +99,10 @@ section {
           width: 100%;
         }
       }
-    }
-  }
-}
 
-@media (max-width: 770px) {
-  section {
-    &.register {
-      height: auto;
-      padding: 100px 0 ;
-
-      .container-size-2 {
-        h1 {
-          margin-bottom: 30px;
-        }
-
-        .content-left, .content-right {
-          width: 100%;
-        }
-
-        form {
-          text-align: center;
-          @include display-flex(wrap, flex-start, space-between);
-
-          .wrap {
-            @include display-flex(wrap, center, space-between);
-
-            .half, .small, .medium {
-              width: 100%;
-            }
-          }
-
-          .form-group {
-            margin-bottom: 10px;
-          }
-
-          h2 {
-            width: 100%;
-            @include fontsize(16);
-            font-weight: bold;
-            color: $dark-gray;
-            text-align: left;
-          }
-
-          button {
-            margin: 25px auto;
-            box-shadow: 0 10px 35px $light-gray;
-          }
-
-          a {
-            width: 100%;
-          }
-        }
+      .col-lg-6 {
+        width: 100%;
+        flex-basis: inherit;
       }
     }
   }

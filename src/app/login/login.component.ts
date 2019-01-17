@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Formulario } from '../_class/formulario';
+import { AuthService } from "./auth.service";
+import {Usuario} from "../_class/usuario";
 
 @Component({
   selector: 'app-login',
@@ -12,10 +14,17 @@ export class LoginComponent implements OnInit {
 
   public model;
 
-  constructor() { }
+  private usuario: Usuario = new Usuario();
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.model = new Formulario(0, '', 0, 0, '', '', 0, '', 0, '');
+    this.model = new Formulario('', 0, 0, '', '', 0, '', 0, '');
+  }
+
+  login() {
+      //console.log(this.usuario);
+      this.authService.login(this.usuario);
   }
 
   // TODO: Remove this when we're done

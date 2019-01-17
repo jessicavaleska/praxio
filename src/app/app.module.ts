@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from "./login/auth.service";
+import {AuthGuard} from "./_guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NgxMaskModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 
