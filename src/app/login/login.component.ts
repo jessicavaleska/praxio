@@ -4,6 +4,7 @@ import { Formulario } from '../_class/formulario';
 import { AuthService } from "./auth.service";
 import {Usuario} from "../_class/usuario";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,8 +23,10 @@ export class LoginComponent implements OnInit {
     this.model = new Formulario('', 0, 0, '', '', 0, '', 0, '');
   }
 
-  login() {
+  login($event) {
       //console.log(this.usuario);
+      $event.preventDefault();
+
       this.authService.login(this.usuario);
   }
 

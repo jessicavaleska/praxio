@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from "./_guards/auth.guard";
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,7 +17,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+      RouterModule.forRoot(routes),
+      SweetAlert2Module.forRoot({
+          buttonsStyling: false,
+          customClass: 'modal-content',
+          confirmButtonClass: 'btn btn-primary',
+          cancelButtonClass: 'btn'
+      })
+  ],
   exports: [RouterModule]
 })
 
