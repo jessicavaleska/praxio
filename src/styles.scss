@@ -1,3 +1,5 @@
+@import 'node_modules/ngx-praxio-ui/theme/app';
+
 @import url('https://fonts.googleapis.com/css?family=Mukta|Open+Sans');
 
 @import './assets/scss/_variables';
@@ -136,3 +138,6 @@ input {
     @include fontsize(22);
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

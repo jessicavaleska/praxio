@@ -1,7 +1,8 @@
+import { SharedModule } from './shared/shared.module';
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,8 +12,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthService } from "./login/auth.service";
-import {AuthGuard} from "./_guards/auth.guard";
+import { AuthService } from './login/auth.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { ValidatorsErrorsComponent } from './shared/validators-errors/validators-errors.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPraxioUiModule } from 'ngx-praxio-ui';
+import { MaterialModule } from 'src/app/material.module';
 
 @NgModule({
   declarations: [
@@ -26,8 +31,13 @@ import {AuthGuard} from "./_guards/auth.guard";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxMaskModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    NgxPraxioUiModule,
+    MaterialModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

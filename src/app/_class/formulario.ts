@@ -10,6 +10,6 @@ export class Formulario {
     public logradouro: string,
     public numero: number,
     public bairro?: string,
-  ) {  }
+  ) { }
 
 }

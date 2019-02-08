@@ -1,5 +1,41 @@
+@import 'node_modules/ngx-praxio-ui/theme/app';
+
 @import './../../assets/scss/_variables';
 @import './../../assets/scss/_mixins';
+
+:host { // estiliza apenas as tags do html da página, neste caso estiliza apenas as tags que estão na section Login
+}
+
+px-button {
+  width: 100% !important;
+
+  ::ng-deep { // acessa os elementos filho dando o grau de importância
+    .px-button.mat-flat-button {
+      background-color: $plt-amethyst;
+      margin-top: $spc-m;
+
+      &:hover  {
+        box-shadow: 0 12px 40px 0 rgba($plt-amethyst, 0.48);
+      }
+    }
+  }
+}
+
+px-input {
+  ::ng-deep {
+    .px-input.mat-focused {
+      .mat-form-field-outline {
+        color: $plt-amethyst !important;
+      }
+    }
+
+    .px-input.mat-focused {
+      .mat-form-field-label {
+        color: $plt-amethyst !important;
+      }
+    }
+  }
+}
 
 section {
   &.login {
@@ -18,6 +54,7 @@ section {
       }
 
       button {
+        width: 100%;
         margin-bottom: 25px;
         box-shadow: 0 10px 35px $light-gray;
       }
